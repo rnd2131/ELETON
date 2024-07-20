@@ -1,0 +1,295 @@
+/* عمومی */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    -webkit-user-select: none; /* غیر فعال کردن انتخاب متن */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#themeToggle {
+    background: #f4f4f4;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    margin: 5px;
+    border-radius: 100px;
+}
+
+.icon {
+    display: none;
+}
+
+.icon.moon {
+    display: inline;
+}
+
+body.dark-mode .icon.moon {
+    display: none;
+}
+
+body.dark-mode .icon.sun {
+    display: inline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.widget {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: all 0.3s ease; /* اضافه کردن انتقال نرم */
+}
+
+.widget.large {
+    transform: scale(1.05); /* بزرگ‌تر کردن بلاک‌ها */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* سایه بزرگ‌تر */
+}
+
+.widget h2 {
+    color: #4a90e2;
+    border-bottom: 2px solid #4ae26b;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+th {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+button {
+    margin-left: 5px;
+}
+
+/* تم تیره */
+body.dark-mode {
+    background-color: #333;
+    color: #ddd;
+}
+
+body.dark-mode .widget {
+    background: #444;
+    border: 1px solid #555;
+}
+
+body.dark-mode input[type="text"], 
+body.dark-mode input[type="number"] {
+    background: #555;
+    color: #ddd;
+}
+
+body.dark-mode button {
+    background-color: #666;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+}
+
+body.dark-mode #themeToggle {
+    background: #333;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    margin: 5px;
+}
+
+body.dark-mode ul li {
+    background: #555;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* حالت بزرگ‌تر برای دکمه تغییر تم */
+body.dark-mode .widget.large {
+    transform: scale(1.05); /* بزرگ‌تر کردن بلاک‌ها در حالت تیره */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* سایه بزرگ‌تر در حالت تیره */
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #555;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* صفحه کشویی ویرایش فروشنده */
+#editVendorModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+#editVendorModal .modal-content {
+    background-color: #555;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#editVendorModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#editVendorModal .close:hover,
+#editVendorModal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

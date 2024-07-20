@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامه حسابداری</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>برنامه حسابداری</h1>
+            <button id="themeToggle" title="تغییر تم">
+                <span class="icon moon">🌙</span>
+                <span class="icon sun">🌞</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="widget">
+            <h2>افزودن فروشنده</h2>
+            <form id="vendorForm">
+                <label for="vendorName" lang="fr">نام فروشنده:</label>
+                <input type="text" id="vendorName" required>
+                <button type="submit">اضافه کردن فروشنده</button>
+            </form>
+        </div>
+
+        <div class="widget">
+            <h2>لیست فروشندگان</h2>
+            <ul id="vendorList"></ul>
+        </div>
+
+        <div class="widget">
+            <h2>افزودن محصول</h2>
+            <form id="productForm" lang="fr">
+                <label for="productName">نام محصول:</label>
+                <input type="text" id="productName" required>
+                <label for="purchasePrice">قیمت خرید:</label>
+                <input type="number" id="purchasePrice" required>
+                <label for="sellingPrice">قیمت فروش:</label>
+                <input type="number" id="sellingPrice" required>
+                <button type="submit">اضافه کردن محصول</button>
+            </form>
+        </div>
+
+        <div class="widget">
+            <h2>لیست محصولات</h2>
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>نام محصول</th>
+                        <th>قیمت خرید</th>
+                        <th>قیمت فروش</th>
+                        <th>مقدار سود</th>
+                        <th>ویرایش</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <!-- صفحه کشویی ویرایش محصول -->
+        <div id="editProductModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>ویرایش محصول</h2>
+                <form id="editProductForm">
+                    <input type="hidden" id="editProductIndex">
+                    <label for="editProductName">نام محصول:</label>
+                    <input type="text" id="editProductName" required>
+                    <label for="editPurchasePrice">قیمت خرید:</label>
+                    <input type="number" id="editPurchasePrice" required>
+                    <label for="editSellingPrice">قیمت فروش:</label>
+                    <input type="number" id="editSellingPrice" required>
+                    <button type="submit">ذخیره تغییرات</button>
+                </form>
+            </div>
+        </div>
+
+
+        
+        <!-- صفحه کشویی ویرایش فروشنده -->
+        <div id="editVendorModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>ویرایش فروشنده</h2>
+                <form id="editVendorForm">
+                    <input type="hidden" id="editVendorIndex">
+                    <label for="editVendorName">نام فروشنده:</label>
+                    <input type="text" id="editVendorName" required>
+                    <button type="submit">ذخیره تغییرات</button>
+                </form>
+            </div>
+        </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
