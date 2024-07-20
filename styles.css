@@ -9,6 +9,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    direction: rtl;
 }
 
 header {
@@ -133,6 +134,7 @@ ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    direction: rtl;
 }
 
 table {
@@ -142,11 +144,13 @@ table {
 
 table, th, td {
     border: 1px solid #ddd;
+    direction: rtl;
 }
 
 th, td {
     padding: 10px;
-    text-align: left;
+    text-align: right;
+    direction: rtl;
 }
 
 thead {
@@ -206,12 +210,6 @@ body.dark-mode ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* حالت بزرگ‌تر برای دکمه تغییر تم */
-body.dark-mode .widget.large {
-    transform: scale(1.05); /* بزرگ‌تر کردن بلاک‌ها در حالت تیره */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* سایه بزرگ‌تر در حالت تیره */
 }
 
 
@@ -353,4 +351,28 @@ body.dark-mode .widget.large {
         font-size: 14px;
         padding: 8px;
     }
+}
+
+/* سایر استایل‌ها */
+
+footer {
+    background-color: rgba(0, 153, 255, 0.313); /* پس‌زمینه شیشه‌ای */
+    backdrop-filter: blur(50px); /* افکت شیشه‌ای */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 5px;
+    width: 30%;
+    box-shadow: 5 -2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 100px 0px 0px 100px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    color: #ffffff;
 }
